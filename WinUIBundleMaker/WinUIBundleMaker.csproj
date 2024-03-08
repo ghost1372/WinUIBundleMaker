@@ -20,7 +20,9 @@
     <SelfContained>true</SelfContained>
     <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
-  
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)'=='true'">
+    <WindowsPackageType>None</WindowsPackageType>
+  </PropertyGroup>
   <ItemGroup>
 	  <None Include="Assets\**\*">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
