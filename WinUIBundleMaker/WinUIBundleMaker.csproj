@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
@@ -25,6 +25,10 @@
 	  <None Include="Assets\**\*">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="Assets\Store\StoreLogo.scale-200.png" />
   </ItemGroup>
   
   <ItemGroup>
