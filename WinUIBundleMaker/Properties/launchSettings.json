@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WinUIBundleMaker (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "WinUIBundleMaker (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
