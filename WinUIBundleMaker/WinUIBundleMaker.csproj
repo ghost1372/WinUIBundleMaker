@@ -16,7 +16,7 @@
 	  <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
 	  <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
-    <PublishSingleFile>true</PublishSingleFile>
+    <PublishSingleFile>false</PublishSingleFile>
     <SelfContained>true</SelfContained>
     <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
