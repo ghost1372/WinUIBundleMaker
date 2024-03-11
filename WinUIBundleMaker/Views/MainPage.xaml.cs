@@ -28,11 +28,10 @@ public sealed partial class MainPage : Page
         if (Directory.Exists(TxtWindowsKit.Text))
         {
             var files = Directory.EnumerateFiles(TxtWindowsKit.Text, "makeappx.exe", SearchOption.AllDirectories);
+            RadioGroup.Items.Clear();
 
             if (files.Any())
             {
-                RadioGroup.Items.Clear();
-
                 foreach (var item in files)
                 {
                     var fileName = GetSimplifiedName(item);
@@ -224,9 +223,15 @@ public sealed partial class MainPage : Page
         await Launcher.LaunchUriAsync(new Uri("https://github.com/ghost1372/"));
     }
 
-    private void Shield_Click(object sender, RoutedEventArgs e)
+    private async void BtnBrowseKit_Click(object sender, RoutedEventArgs e)
     {
-
+        var folder = await FileAndFolderPickerHelper.PickSingleFolderAsync(App.CurrentWindow);
+        if (folder != null)
+        {
+            msixFiles.Clear();
+            TxtWindowsKit.Text = folder.Path;
+            GetWindowsKit();
+        }
     }
 }
 

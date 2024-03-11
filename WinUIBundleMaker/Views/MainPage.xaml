@@ -29,13 +29,22 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <StackPanel Margin="10" Spacing="10">
-                <AutoSuggestBox
-                    x:Name="TxtWindowsKit"
-                    Header="Windows Kit Folder Path"
-                    PlaceholderText="Windows Kit Path"
-                    QueryIcon="Find"
-                    QuerySubmitted="TxtWindowsKit_QuerySubmitted"
-                    Text="C:\Program Files (x86)\Windows Kits\10\bin" />
+                <StackPanel Orientation="Horizontal">
+                    <AutoSuggestBox
+                        x:Name="TxtWindowsKit"
+                        MinWidth="400"
+                        Header="Windows Kit Folder Path"
+                        PlaceholderText="Windows Kit Path"
+                        QueryIcon="Find"
+                        QuerySubmitted="TxtWindowsKit_QuerySubmitted"
+                        Text="C:\Program Files (x86)\Windows Kits\10\bin" />
+                    <Button
+                        x:Name="BtnBrowseKit"
+                        Margin="10,0"
+                        VerticalAlignment="Bottom"
+                        Click="BtnBrowseKit_Click"
+                        Content="Browse Folder" />
+                </StackPanel>
                 <InfoBar x:Name="InfobarStatus" IsClosable="False" />
             </StackPanel>
             <RadioButtons
@@ -60,11 +69,11 @@
                             PlaceholderText="MSIX Folder Path" />
                         <CheckBox
                             x:Name="ChkMove"
-                            Margin="0,28,0,0"
+                            VerticalAlignment="Bottom"
                             Content="Move All MSIX files (BundleDirectory)" />
                         <Button
                             x:Name="BtnBrowseMSIX"
-                            Margin="0,28,0,0"
+                            VerticalAlignment="Bottom"
                             Click="BtnBrowseMSIX_Click"
                             Content="Browse Folder"
                             IsEnabled="False" />
